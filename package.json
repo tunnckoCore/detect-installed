@@ -1,6 +1,6 @@
 {
   "name": "detect-installed",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Checks that given package name is installed locally (in current working directory) or globally.",
   "scripts": {
     "lint": "jshint index.js && jscs index.js --reporter inline",

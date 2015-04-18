@@ -7,7 +7,6 @@
 
 'use strict';
 
-
 var fs = require('fs');
 var path = require('path');
 var fnName = require('fn-name');
@@ -38,7 +37,7 @@ module.exports = function detectInstalled(name, local, callback) {
 
   if (typeof local === 'boolean') {
     debug('(info) will checks in local modules')
-    fp = local ? path.join(cwd, 'node_modules', name) : fp;
+    fp = local ? nm : fp;
   }
   if (fnName(callback) !== 'defaultHandleArgumentsCallback') {
     debug('(async) start')

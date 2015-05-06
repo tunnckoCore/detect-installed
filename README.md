@@ -4,7 +4,7 @@
 
 ## Install
 ```
-npm i --save detect-installed
+npm i detect-installed --save
 npm test
 ```
 
@@ -33,6 +33,14 @@ detectInstalled('npm', true, function(err, res) {
   console.log(res); //=> false
 });
 ```
+
+
+## Related
+- [detect-installed](https://github.com/tunnckoCore/detect-installed): Checks that given package name is installed locally (in current… [more](https://github.com/tunnckoCore/detect-installed)
+- [get-installed-path](https://github.com/tunnckoCore/get-installed-path): Get the installation path of the given package if it… [more](https://github.com/tunnckoCore/get-installed-path)
+- [is-missing](https://github.com/tunnckoCore/is-missing): Check that given `name` or `user/repo` exists in npm registry… [more](https://github.com/tunnckoCore/is-missing)
+- [is-installed](https://github.com/tunnckoCore/is-installed): Checks that given package is installed on the system -… [more](https://github.com/tunnckoCore/is-installed)
+- [npm-related](https://github.com/tunnckoCore/npm-related): Thin wrapper on top of `helper-related` for generating a list… [more](https://github.com/tunnckoCore/npm-related)
 
 
 ## Author

@@ -1,5 +1,12 @@
 
 
+## v1.0.2 / May 6, 2015
+- Release v1.0.2 / npm@v1.0.2
+- feross/standard for example usage
+- add related section
+- run update
+- apply feross/standard, close #1
+
 ## v1.0.1 / April 18, 2015
 - Release v1.0.1 / npm@v1.0.1
 - run lint

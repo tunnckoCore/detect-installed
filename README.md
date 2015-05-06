@@ -13,25 +13,25 @@ npm test
 > For more use-cases see the [tests](./test.js)
 
 ```js
-var detectInstalled = require('detect-installed');
+var detectInstalled = require('detect-installed')
 
 // (sync) checks globally
-detectInstalled('npm'); //=> true
+detectInstalled('npm') //=> true
 
 // (async) checks globally
-detectInstalled('npm', function(err, res) {
-  console.log(err); //=> null
-  console.log(res); //=> true
-});
+detectInstalled('npm', function (err, res) {
+  console.log(err) //=> null
+  console.log(res) //=> true
+})
 
 // (sync) checks locally
-detectInstalled('npm', true); //=> false
+detectInstalled('npm', true) //=> false
 
 // (async) checks locally
-detectInstalled('npm', true, function(err, res) {
-  console.log(err); //=> null
-  console.log(res); //=> false
-});
+detectInstalled('npm', true, function (err, res) {
+  console.log(err) //=> null
+  console.log(res) //=> false
+})
 ```
 
 

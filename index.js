@@ -9,7 +9,6 @@
 
 var fs = require('fs')
 var path = require('path')
-var fnName = require('fn-name')
 var modules = require('global-modules')
 var handle = require('handle-arguments')
 var debug = require('debug')('detect-installed')
@@ -39,7 +38,7 @@ module.exports = function detectInstalled (name, local, callback) {
     debug('(info) will checks in local modules')
     fp = local ? nm : fp
   }
-  if (fnName(callback) !== 'defaultHandleArgumentsCallback') {
+  if (callback) {
     debug('(async) start')
     return statAsync(fp, callback)
   }

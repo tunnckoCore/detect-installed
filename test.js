@@ -88,7 +88,7 @@ test('detect-installed:', function () {
     done()
   })
   test('should checks locally asynchronous. (when exists)', function (done) {
-    detectInstalled('fn-name', true, function (err, actual) {
+    detectInstalled('debug', true, function (err, actual) {
       test.equal(err, null)
       test.equal(actual, true)
       done()
@@ -102,8 +102,8 @@ test('detect-installed:', function () {
     })
   })
   test('should checks locally synchronous. (when exists)', function (done) {
-    var actual1 = detectInstalled('fn-name', true)
-    var actual2 = detectInstalled('fn-name', true, {not: 'a function'})
+    var actual1 = detectInstalled('debug', true)
+    var actual2 = detectInstalled('debug', true, {not: 'a function'})
     var expected = true
 
     test.equal(actual1, expected)

@@ -1,5 +1,11 @@
 
 
+## v1.0.3 / May 9, 2015
+- Release v1.0.3 / npm@v1.0.3
+- update related
+- reorganize tests
+- bump dependencies, remove `fn-name`
+
 ## v1.0.2 / May 6, 2015
 - Release v1.0.2 / npm@v1.0.2
 - feross/standard for example usage

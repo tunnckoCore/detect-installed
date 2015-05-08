@@ -1,6 +1,6 @@
 {
   "name": "detect-installed",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Checks that given package name is installed locally (in current working directory) or globally.",
   "scripts": {
     "test": "standard && node test.js",

@@ -1,5 +1,10 @@
 
 
+## 1.0.4 / 2015-07-17
+- Release v1.0.4 / npm@v1.0.4
+- remove `debug` and `handle-arguments`, simplify
+- update repo
+
 ## 1.0.3 / 2015-05-09
 - Release v1.0.3 / npm@v1.0.3
 - update related

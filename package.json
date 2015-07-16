@@ -1,6 +1,6 @@
 {
   "name": "detect-installed",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Checks that given package name is installed locally or globally. Support sync and async api.",
   "repository": "tunnckoCore/detect-installed",
   "author": "Charlike Mike Reagent <@tunnckoCore> (http://www.tunnckocore.tk)",

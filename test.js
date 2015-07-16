@@ -1,9 +1,11 @@
-/**
+/*!
  * detect-installed <https://github.com/tunnckoCore/detect-installed>
  *
- * Copyright (c) 2015 Charlike Mike Reagent, contributors.
+ * Copyright (c) 2015 Charlike Mike Reagent <@tunnckoCore> (http://www.tunnckocore.tk)
  * Released under the MIT license.
  */
+
+/* jshint asi:true */
 
 'use strict'
 
@@ -16,15 +18,7 @@ test('detect-installed:', function () {
       detectInstalled([1, 2, 3])
     }
     test.throws(fixture, TypeError)
-    test.throws(fixture, /expect `name` to be string/)
-    done()
-  })
-  test('should throw Error if `name` is empty string', function (done) {
-    function fixture () {
-      detectInstalled('')
-    }
-    test.throws(fixture, Error)
-    test.throws(fixture, /expect `name` to be non empty string/)
+    test.throws(fixture, /detect-installed: expect `name` be string/)
     done()
   })
   test('should checks globally', function () {
@@ -91,7 +85,7 @@ test('detect-installed:', function () {
   })
   test('should checks locally', function () {
     test('asynchronous, when exists', function (done) {
-      detectInstalled('debug', true, function (err, actual) {
+      detectInstalled('global-modules', true, function (err, actual) {
         test.equal(err, null)
         test.equal(actual, true)
         done()
@@ -105,8 +99,8 @@ test('detect-installed:', function () {
       })
     })
     test('synchronous, when exists', function (done) {
-      var actual1 = detectInstalled('debug', true)
-      var actual2 = detectInstalled('debug', true, {not: 'a function'})
+      var actual1 = detectInstalled('global-modules', true)
+      var actual2 = detectInstalled('global-modules', true, {not: 'a function'})
       var expected = true
 
       test.equal(actual1, expected)

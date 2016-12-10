@@ -10,10 +10,12 @@
     "test": "standard && node test.js"
   },
   "dependencies": {
-    "global-modules": "^0.2.0"
+    "global-modules": "^0.2.0",
+    "pkg-dir": "^1.0.0"
   },
   "devDependencies": {
-    "assertit": "^0.1.0"
+    "assertit": "^0.1.0",
+    "mkdirp": "^0.5.1"
   },
   "keywords": [
     "check",

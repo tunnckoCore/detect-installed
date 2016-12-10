@@ -48,7 +48,7 @@ function statAsync (fp, callback) {
 function tryStatSync (fp) {
   try {
     return fs.statSync(fp).isDirectory()
-  } catch(err) {
+  } catch (err) {
     return false
   }
 }

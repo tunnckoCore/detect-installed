@@ -7,9 +7,7 @@
 
 'use strict'
 
-const fs = require('fs')
-const path = require('path')
-const modules = require('global-modules')
+const get = require('get-installed-path')
 
 /**
  * > Detect if some package `name`is
@@ -61,15 +59,7 @@ const modules = require('global-modules')
 
 module.exports = function detectInstalled (name, opts) {
   return new Promise((resolve, reject) => {
-    if (!isValidString(name)) {
-      const message = 'detect-installed: expect `name` to be string'
-      return reject(new TypeError(message))
-    }
-
-    fs.stat(defaults(name, opts), (err, stats) => {
-      if (err) return resolve(false)
-      resolve(stats.isDirectory())
-    })
+    get(name, opts).then(() => resolve(true), () => resolve(false))
   })
 }
 
@@ -89,37 +79,17 @@ module.exports = function detectInstalled (name, opts) {
  * @name   .sync
  * @param  {String} `name` package name
  * @param  {Object} `opts` pass `opts.local` to check locally
- * @return {Boolean} or throw `TypeError` if `name` not a string or is empty string
+ * @return {Boolean} false, if error or not exists globally/locally
  * @api public
  */
 
 module.exports.sync = function detectInstalledSync (name, opts) {
-  if (!isValidString(name)) {
-    throw new TypeError('detect-installed: expect `name` to be string')
-  }
-  return tryStatSync(defaults(name, opts))
-}
-
-const isValidString = (val) => {
-  return typeof val === 'string' ? val.length > 0 : false
-}
-
-const defaults = (name, opts) => {
-  opts = opts && typeof opts === 'object' ? opts : {}
-  opts.cwd = typeof opts.cwd === 'string' ? opts.cwd : process.cwd()
-
-  const fp = opts.local
-    ? path.join(opts.cwd, 'node_modules', name)
-    : path.join(modules, name)
-
-  console.log(fp, modules)
-  return fp
-}
-
-const tryStatSync = (fp) => {
+  let result = null
   try {
-    return fs.statSync(fp).isDirectory()
-  } catch (err) {
+    result = get.sync(name, opts)
+  } catch (e) {
     return false
   }
+
+  return typeof result === 'string'
 }

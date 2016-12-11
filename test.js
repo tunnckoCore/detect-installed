@@ -54,13 +54,8 @@ test('async: should return false if not exists locally', () => {
  * testing synchronous mode
  */
 
-test('synchronous: should throw TypeError when invalid `name` is passed', (done) => {
-  function fixture () {
-    detectInstalled.sync(1234)
-  }
-
-  test.throws(fixture, TypeError)
-  test.throws(fixture, /expect `name` to be string/)
+test('synchronous: should return false if TypeError when invalid `name` is passed', (done) => {
+  test.strictEqual(detectInstalled.sync(1234), false)
   done()
 })
 
@@ -71,7 +66,7 @@ test('synchronous: should return true if exists globally', () => {
   })
 })
 
-test('synchronous: should return false if not exists glboally', () => {
+test('synchronous: should return false if not exists globally', () => {
   return new Promise((resolve) => {
     test.strictEqual(detectInstalled.sync('foo-bar-bqwewrwevdfg-sa'), false)
     resolve()

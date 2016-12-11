@@ -1118,6 +1118,12 @@ get-fn-name@^1.0.0:
   dependencies:
     fn-name "^2.0.1"
 
+get-installed-path@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/get-installed-path/-/get-installed-path-2.0.1.tgz#665fc9b9c0cdbd7ed0e3d2cb65508d0ba7947733"
+  dependencies:
+    global-modules "^0.2.3"
+
 get-pkg-repo@^1.0.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/get-pkg-repo/-/get-pkg-repo-1.3.0.tgz#43c6b4c048b75dd604fc5388edecde557f6335df"

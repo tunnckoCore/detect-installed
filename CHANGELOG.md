@@ -1,3 +1,30 @@
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/tunnckocore/detect-installed/compare/v1.0.4...v2.0.0) (2016-12-11)
+
+
+### Bug Fixes
+
+* **appveyor:** clean builds ([0a8fd7f](https://github.com/tunnckocore/detect-installed/commit/0a8fd7f))
+* **misc:** update changelog and package version ([8c55d06](https://github.com/tunnckocore/detect-installed/commit/8c55d06))
+
+
+### Code Refactoring
+
+* use ES2015, allow custom cwd to be passed through options ([a9586e7](https://github.com/tunnckocore/detect-installed/commit/a9586e7))
+
+
+### BREAKING CHANGES
+
+* default export is async and returns a promise; allow custom cwd to be passed
+
+through opts.cwd; pass opts.local to check if package exists locally.
+
+
+
 
 
 ## 1.0.4 - 2015-07-17

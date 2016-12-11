@@ -11,6 +11,54 @@ const fs = require('fs')
 const path = require('path')
 const modules = require('global-modules')
 
+/**
+ * > Detect if some package `name`is
+ * installed globally or locally. By default checks
+ * if it exists in globally installed modules, using [global-modules][].
+ * Pass `opts.local` to check if it exists in locally installed modules
+ * or in `opts.cwd` dir.
+ *
+ * **Example**
+ *
+ * ```js
+ * const detectInstalled = require('detect-installed')
+ *
+ * detectInstalled('npm').then((exists) => {
+ *   console.log(exists) // => true
+ * })
+ *
+ * detectInstalled('foo-bar-barwerwlekrjw').then((exists) => {
+ *   console.log(exists) // => false
+ * })
+ *
+ * detectInstalled('npm', {
+ *   local: true
+ * }).then((exists) => {
+ *   console.log(exists) // => false
+ * })
+ *
+ * detectInstalled('global-modules', {
+ *   local: true
+ * }).then((exists) => {
+ *   console.log(exists) // => true
+ * })
+ *
+ * // If you are using it for some sub-directory
+ * // pass `opts.cwd` to be where the `node_modules`
+ * // folder is.
+ * process.chidr('foo-bar-baz')
+ * detectInstalled('global-modules', {
+ *   local: true,
+ *   cwd: '../'
+ * }).then((exists) => console.log(exists)) // => true
+ * ```
+ *
+ * @param  {String} `name` package name
+ * @param  {Object} `opts` pass `opts.local` to check locally
+ * @return {Promise} rejected promise if `name` not a string or is empty string
+ * @api public
+ */
+
 module.exports = function detectInstalled (name, opts) {
   return new Promise((resolve, reject) => {
     if (!isValidString(name)) {
@@ -24,6 +72,26 @@ module.exports = function detectInstalled (name, opts) {
     })
   })
 }
+
+/**
+ * > Synchronously check if package `name` exists
+ * as locally or globally installed modules.
+ *
+ * **Example**
+ *
+ * ```js
+ * const detectInstalled = require('detect-installed')
+ *
+ * const exists = detectInstalled.sync('npm') // => true
+ * const result = detectInstalled.sync('global-modules', { local: true }) // => true
+ * ```
+ *
+ * @name   .sync
+ * @param  {String} `name` package name
+ * @param  {Object} `opts` pass `opts.local` to check locally
+ * @return {Boolean} or throw `TypeError` if `name` not a string or is empty string
+ * @api public
+ */
 
 module.exports.sync = function detectInstalledSync (name, opts) {
   if (!isValidString(name)) {

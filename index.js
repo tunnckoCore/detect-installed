@@ -108,9 +108,12 @@ const defaults = (name, opts) => {
   opts = opts && typeof opts === 'object' ? opts : {}
   opts.cwd = typeof opts.cwd === 'string' ? opts.cwd : process.cwd()
 
-  return opts.local
+  const fp = opts.local
     ? path.join(opts.cwd, 'node_modules', name)
     : path.join(modules, name)
+
+  console.log(fp, modules)
+  return fp
 }
 
 const tryStatSync = (fp) => {

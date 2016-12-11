@@ -66,7 +66,7 @@
   },
   "engines": {
     "node": ">=4",
-    "npm": ">=3"
+    "npm": ">=2"
   },
   "verb": {
     "run": true,

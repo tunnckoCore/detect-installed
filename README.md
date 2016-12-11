@@ -9,7 +9,7 @@
 [![coverage status][coveralls-img]][coveralls-url] 
 [![dependency status][david-img]][david-url]
 
-You might also be interested in [get-installed-path](https://github.com/tunnckoCore/get-installed-path#readme).
+You might also be interested in [get-installed-path](https://github.com/tunnckocore/get-installed-path#readme).
 
 ## Table of Contents
 - [Install](#install)
@@ -48,14 +48,14 @@ const detectInstalled = require('detect-installed')
 
 ## API
 
-### [detectInstalled](index.js#L62)
+### [detectInstalled](index.js#L60)
 > Detect if some package `name`is installed globally or locally. By default checks if it exists in globally installed modules, using [global-modules][]. Pass `opts.local` to check if it exists in locally installed modules or in `opts.cwd` dir.
 
 **Params**
 
 * `name` **{String}**: package name    
 * `opts` **{Object}**: pass `opts.local` to check locally    
-* `returns` **{Promise}**: rejected promise if `name` not a string or is empty string  
+* `returns` **{Promise}**: always resolved promise, never rejected  
 
 **Example**
 
@@ -92,14 +92,14 @@ detectInstalled('global-modules', {
 }).then((exists) => console.log(exists)) // => true
 ```
 
-### [.sync](index.js#L96)
+### [.sync](index.js#L86)
 > Synchronously check if package `name` exists as locally or globally installed modules.
 
 **Params**
 
 * `name` **{String}**: package name    
 * `opts` **{Object}**: pass `opts.local` to check locally    
-* `returns` **{Boolean}**: or throw `TypeError` if `name` not a string or is empty string  
+* `returns` **{Boolean}**: false, if error or not exists globally/locally  
 
 **Example**
 
@@ -112,7 +112,7 @@ const result = detectInstalled.sync('global-modules', { local: true }) // => tru
 
 ## Related
 - [always-done](https://www.npmjs.com/package/always-done): Handle completion and errors with elegance! Support for streams, callbacks, promises, child processes, async/await and sync functions. A drop-in replacement… [more](https://github.com/hybridables/always-done#readme) | [homepage](https://github.com/hybridables/always-done#readme "Handle completion and errors with elegance! Support for streams, callbacks, promises, child processes, async/await and sync functions. A drop-in replacement for [async-done][] - pass 100% of its tests plus more")
-- [get-installed-path](https://www.npmjs.com/package/get-installed-path): Get the installation path of the given package if it is installed globally or locally. | [homepage](https://github.com/tunnckoCore/get-installed-path#readme "Get the installation path of the given package if it is installed globally or locally.")
+- [get-installed-path](https://www.npmjs.com/package/get-installed-path): Get locally or globally installation path of given package name | [homepage](https://github.com/tunnckocore/get-installed-path#readme "Get locally or globally installation path of given package name")
 - [global-modules](https://www.npmjs.com/package/global-modules): The directory used by npm for globally installed npm modules. | [homepage](https://github.com/jonschlinkert/global-modules "The directory used by npm for globally installed npm modules.")
 - [is-installed](https://www.npmjs.com/package/is-installed): Checks that given package is installed on the system - globally or locally. | [homepage](https://github.com/tunnckoCore/is-installed#readme "Checks that given package is installed on the system - globally or locally.")
 - [minibase](https://www.npmjs.com/package/minibase): Minimalist alternative for Base. Build complex APIs with small units called plugins. Works well with most of the already existing… [more](https://github.com/node-minibase/minibase#readme) | [homepage](https://github.com/node-minibase/minibase#readme "Minimalist alternative for Base. Build complex APIs with small units called plugins. Works well with most of the already existing [base][] plugins.")

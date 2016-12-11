@@ -53,7 +53,7 @@ const get = require('get-installed-path')
  *
  * @param  {String} `name` package name
  * @param  {Object} `opts` pass `opts.local` to check locally
- * @return {Promise} rejected promise if `name` not a string or is empty string
+ * @return {Promise} always resolved promise, never rejected
  * @api public
  */
 

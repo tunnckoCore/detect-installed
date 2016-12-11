@@ -1,35 +1,71 @@
 {
   "name": "detect-installed",
-  "version": "1.0.4",
-  "description": "Checks that given package name is installed locally or globally. Support sync and async api.",
+  "version": "0.1.0",
+  "description": "Checks that given package is installed globally or locally.",
   "repository": "tunnckoCore/detect-installed",
-  "author": "Charlike Mike Reagent <@tunnckoCore> (http://www.tunnckocore.tk)",
+  "author": "Charlike Mike Reagent <@tunnckoCore> (http://i.am.charlike.online)",
+  "precommit.silent": true,
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "standard && node test.js"
+    "lint": "standard --verbose",
+    "pretest": "npm run lint",
+    "test": "npm run coverage",
+    "posttest": "npm run lint:coverage",
+    "coverage": "nyc node test.js",
+    "lint:coverage": "nyc check-coverage --lines 0 --branches 0 --statements 0 --functions 0",
+    "report-coverage": "nyc report --reporter=text-lcov | coveralls",
+    "prerelease": "npm test",
+    "release": "standard-version --sign --no-verify",
+    "precommit": "git add --all",
+    "commit": "git-cz"
   },
-  "dependencies": {
-    "global-modules": "^0.2.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "assertit": "^0.1.0"
+    "commitizen": "^2.8.6",
+    "coveralls": "^2.11.15",
+    "cz-conventional-changelog": "^1.2.0",
+    "mukla": "^0.4.8",
+    "nyc": "^10.0.0",
+    "pre-commit": "^1.2.0",
+    "standard": "^8.6.0",
+    "standard-version": "^4.0.0"
   },
-  "keywords": [
-    "check",
-    "detect",
-    "directory",
-    "global",
-    "globally",
-    "install",
-    "installed",
-    "local",
-    "locally",
-    "module",
-    "npm",
-    "package",
-    "pkg",
-    "util",
-    "validate"
-  ]
+  "files": [
+    "index.js"
+  ],
+  "keywords": [],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "verb": {
+    "run": true,
+    "toc": {
+      "render": true,
+      "method": "preWrite",
+      "maxdepth": 3,
+      "footer": ""
+    },
+    "layout": "empty",
+    "tasks": [
+      "readme"
+    ],
+    "related": {
+      "list": [
+        "always-done",
+        "minibase",
+        "try-catch-core"
+      ],
+      "highlight": "always-done"
+    },
+    "lint": {
+      "reflinks": true
+    }
+  },
+  "engines": {
+    "node": ">=4",
+    "npm": ">=3"
+  }
 }

@@ -19,7 +19,7 @@ module.exports = function detectInstalled (name, opts) {
     }
 
     fs.stat(defaults(name, opts), (err, stats) => {
-      if (err) return reject(err)
+      if (err) return resolve(false)
       resolve(stats.isDirectory())
     })
   })
@@ -47,8 +47,8 @@ const defaults = (name, opts) => {
 
 const tryStatSync = (fp) => {
   try {
-     return fs.statSync(fp).isDirectory()
+    return fs.statSync(fp).isDirectory()
   } catch (err) {
-     return false
+    return false
   }
 }

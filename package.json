@@ -45,6 +45,10 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
+  "engines": {
+    "node": ">=4",
+    "npm": ">=3"
+  },
   "verb": {
     "run": true,
     "toc": {
@@ -61,12 +65,12 @@
       "list": [
         "always-done",
         "minibase",
-        "try-catch-core"
+        "try-catch-core",
+        "is-installed",
+        "global-modules",
+        "get-installed-path"
       ],
-      "highlight": "always-done"
-    },
-    "lint": {
-      "reflinks": true
+      "highlight": "get-installed-path"
     },
     "reflinks": [
       "always-done",
@@ -79,10 +83,9 @@
       "standard-version",
       "verb",
       "verb-generate-readme"
-    ]
-  },
-  "engines": {
-    "node": ">=4",
-    "npm": ">=3"
+    ],
+    "lint": {
+      "reflinks": true
+    }
   }
 }

@@ -39,7 +39,26 @@
   "files": [
     "index.js"
   ],
-  "keywords": [],
+  "keywords": [
+    "check",
+    "detect",
+    "directory",
+    "global",
+    "globally",
+    "install",
+    "installed",
+    "local",
+    "locally",
+    "module",
+    "modules",
+    "npm",
+    "package",
+    "packages",
+    "pkg",
+    "util",
+    "utils",
+    "validate"
+  ],
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"

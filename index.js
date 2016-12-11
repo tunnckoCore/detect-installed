@@ -10,14 +10,14 @@
 var fs = require('fs')
 var path = require('path')
 var modules = require('global-modules')
-var cwd = process.cwd()
+var getPkgDir = require('pkg-dir').sync
 
 module.exports = function detectInstalled (name, local, callback) {
   if (!isValidString(name)) {
     throw new TypeError('detect-installed: expect `name` be string')
   }
   var fp = path.join(modules, name)
-  var nm = path.join(cwd, 'node_modules', name)
+  var nm = path.join(getPkgDir(), 'node_modules', name)
 
   if (typeof local === 'function') {
     callback = local

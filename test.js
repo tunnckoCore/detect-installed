@@ -9,8 +9,11 @@
 
 'use strict'
 
+var mkdirp = require('mkdirp')
 var test = require('assertit')
 var detectInstalled = require('./index')
+
+mkdirp.sync('subdir')
 
 test('detect-installed:', function () {
   test('should throw TypeError if `name` is not a string', function (done) {
@@ -115,6 +118,46 @@ test('detect-installed:', function () {
       test.equal(actual1, expected)
       test.equal(actual2, expected)
       done()
+    })
+    test('asynchronous, when exists, in sub-dir', function (done) {
+      process.chdir('subdir')
+      detectInstalled('global-modules', true, function (err, actual) {
+        test.equal(err, null)
+        test.equal(actual, true)
+        done()
+        process.chdir('..')
+      })
+    })
+    test('asynchronous, when not exists, in sub-dir', function (done) {
+      process.chdir('subdir')
+      detectInstalled('when not exists', true, function (err, actual) {
+        test.equal(err, null)
+        test.equal(actual, false)
+        done()
+        process.chdir('..')
+      })
+    })
+    test('synchronous, when exists, in sub-dir', function (done) {
+      process.chdir('subdir')
+      var actual1 = detectInstalled('global-modules', true)
+      var actual2 = detectInstalled('global-modules', true, {not: 'a function'})
+      var expected = true
+
+      test.equal(actual1, expected)
+      test.equal(actual2, expected)
+      done()
+      process.chdir('..')
+    })
+    test('synchronous, when not exists, in sub-dir', function (done) {
+      process.chdir('subdir')
+      var actual1 = detectInstalled('npm', true)
+      var actual2 = detectInstalled('npm', true, {not: 'a function'})
+      var expected = false
+
+      test.equal(actual1, expected)
+      test.equal(actual2, expected)
+      done()
+      process.chdir('..')
     })
   })
 })

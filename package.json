@@ -1,6 +1,6 @@
 {
   "name": "detect-installed",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Checks that given package is installed globally or locally.",
   "repository": "tunnckoCore/detect-installed",
   "author": "Charlike Mike Reagent <@tunnckoCore> (http://i.am.charlike.online)",

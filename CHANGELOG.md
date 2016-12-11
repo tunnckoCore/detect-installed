@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.3"></a>
+## [2.0.3](https://github.com/tunnckocore/detect-installed/compare/v2.0.2...v2.0.3) (2016-12-11)
+
+
+### Bug Fixes
+
+* **package:** fix engines field - npm should be >=2, not >=3 ([e0781d8](https://github.com/tunnckocore/detect-installed/commit/e0781d8))
+
+
+
 <a name="2.0.2"></a>
 ## [2.0.2](https://github.com/tunnckocore/detect-installed/compare/v2.0.1...v2.0.2) (2016-12-11)
 

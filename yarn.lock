@@ -1118,9 +1118,9 @@ get-fn-name@^1.0.0:
   dependencies:
     fn-name "^2.0.1"
 
-get-installed-path@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/get-installed-path/-/get-installed-path-2.0.1.tgz#665fc9b9c0cdbd7ed0e3d2cb65508d0ba7947733"
+get-installed-path@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/get-installed-path/-/get-installed-path-2.0.3.tgz#b3a8f0ec2af09ff9ad521c2d94465b952ad000de"
   dependencies:
     global-modules "^0.2.3"
 
@@ -2182,9 +2182,9 @@ pluralize@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-1.2.1.tgz#d1a21483fd22bb41e58a12fa3421823140897c45"
 
-pre-commit@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/pre-commit/-/pre-commit-1.2.0.tgz#16a1a218861c778d1a1498719c9763717913d5b8"
+pre-commit@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/pre-commit/-/pre-commit-1.2.1.tgz#6c591d1af460b41b36d136a0fe0ff9570b3c5473"
   dependencies:
     cross-spawn "^5.0.1"
     spawn-sync "^1.0.15"

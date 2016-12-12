@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.4"></a>
+## [2.0.4](https://github.com/tunnckocore/detect-installed/compare/v2.0.3...v2.0.4) (2016-12-12)
+
+
+### Bug Fixes
+
+* **appveyor:** force install npm globally ([63aaa29](https://github.com/tunnckocore/detect-installed/commit/63aaa29))
+
+
+
 <a name="2.0.3"></a>
 ## [2.0.3](https://github.com/tunnckocore/detect-installed/compare/v2.0.2...v2.0.3) (2016-12-11)
 
